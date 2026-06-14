@@ -1,0 +1,558 @@
+/* ==========================
+   RESET
+========================== */
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+html{
+    scroll-behavior:smooth;
+}
+
+body{
+
+    font-family:'Montserrat',sans-serif;
+
+    background:#f8fbff;
+
+    color:#355887;
+
+    overflow-x:hidden;
+}
+
+
+/* ==========================
+   PANTALLA INICIAL
+========================== */
+
+#pantallaInicio{
+
+    position:fixed;
+
+    inset:0;
+
+    z-index:9999;
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    text-align:center;
+
+    background:
+    linear-gradient(
+        rgba(255,255,255,.45),
+        rgba(255,255,255,.45)
+    ),
+    url("hero.jpg");
+
+    background-size:cover;
+
+    background-position:center;
+
+    transition:1.2s ease;
+}
+
+#pantallaInicio.ocultar{
+
+    opacity:0;
+
+    visibility:hidden;
+}
+
+.inicio-contenido{
+
+    padding:30px;
+
+    backdrop-filter:blur(6px);
+}
+
+.corona{
+
+    font-size:3rem;
+
+    margin-bottom:20px;
+}
+
+.inicio-contenido h3{
+
+    letter-spacing:5px;
+
+    font-weight:300;
+
+    color:#4f79b9;
+
+    margin-bottom:15px;
+}
+
+.inicio-contenido h1{
+
+    font-family:'Great Vibes',cursive;
+
+    font-size:4.5rem;
+
+    color:#355887;
+
+    line-height:1;
+
+    margin-bottom:20px;
+}
+
+.inicio-contenido p{
+
+    letter-spacing:2px;
+
+    margin-bottom:35px;
+}
+
+#abrirInvitacion{
+
+    border:none;
+
+    padding:18px 40px;
+
+    border-radius:50px;
+
+    background:
+    linear-gradient(
+        135deg,
+        #8bb4e8,
+        #4f79b9
+    );
+
+    color:white;
+
+    cursor:pointer;
+
+    font-size:1rem;
+
+    box-shadow:
+    0 10px 30px rgba(79,121,185,.25);
+}
+
+
+/* ==========================
+   CONTENIDO
+========================== */
+
+#contenido{
+
+    display:block;
+}
+
+
+/* ==========================
+   HERO
+========================== */
+
+.hero{
+
+    min-height:100svh;
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    text-align:center;
+
+    background:
+    linear-gradient(
+        rgba(255,255,255,.35),
+        rgba(255,255,255,.35)
+    ),
+    url("hero.jpg");
+
+    background-size:cover;
+
+    background-position:center;
+}
+
+.hero-contenido{
+
+    padding:30px;
+}
+
+.hero h2{
+
+    letter-spacing:5px;
+
+    font-weight:300;
+
+    margin-bottom:20px;
+}
+
+.hero h1{
+
+    font-family:'Great Vibes',cursive;
+
+    font-size:4.5rem;
+
+    color:#355887;
+
+    line-height:1;
+}
+
+
+/* ==========================
+   SECCIONES
+========================== */
+
+section{
+
+    position:relative;
+
+    padding:90px 20px;
+
+    text-align:center;
+}
+
+.contenedor{
+
+    width:90%;
+
+    max-width:800px;
+
+    margin:auto;
+}
+
+section h2{
+
+    font-family:'Great Vibes',cursive;
+
+    font-size:3rem;
+
+    margin-bottom:25px;
+
+    color:#4f79b9;
+}
+
+section p{
+
+    line-height:1.8;
+
+    margin-bottom:15px;
+}
+
+
+/* ==========================
+   DIAGONALES
+========================== */
+
+.diagonal{
+
+    clip-path:
+    polygon(
+        0 0,
+        100% 5%,
+        100% 100%,
+        0 95%
+    );
+}
+
+.diagonal-inversa{
+
+    clip-path:
+    polygon(
+        0 5%,
+        100% 0,
+        100% 95%,
+        0 100%
+    );
+}
+
+
+/* ==========================
+   COLORES
+========================== */
+
+.padre,
+.contador,
+.ubicacion,
+.regalos{
+
+    background:#eef6ff;
+}
+
+.mensaje,
+.evento,
+.vestimenta,
+.confirmacion{
+
+    background:white;
+}
+
+.final{
+
+    background:
+    linear-gradient(
+        180deg,
+        #eef6ff,
+        #dcecff
+    );
+}
+
+
+/* ==========================
+   CONTADOR
+========================== */
+
+.contador-grid{
+
+    display:grid;
+
+    grid-template-columns:
+    repeat(2,1fr);
+
+    gap:25px;
+
+    margin-top:35px;
+}
+
+.contador-grid div{
+
+    padding:20px;
+}
+
+.contador-grid span{
+
+    display:block;
+
+    font-size:3rem;
+
+    font-weight:bold;
+
+    color:#4f79b9;
+}
+
+
+/* ==========================
+   BOTONES
+========================== */
+
+.boton,
+.regalos button{
+
+    display:inline-block;
+
+    margin-top:20px;
+
+    border:none;
+
+    padding:16px 32px;
+
+    border-radius:50px;
+
+    text-decoration:none;
+
+    background:
+    linear-gradient(
+        135deg,
+        #8bb4e8,
+        #4f79b9
+    );
+
+    color:white;
+
+    cursor:pointer;
+
+    font-size:1rem;
+
+    box-shadow:
+    0 10px 30px rgba(79,121,185,.20);
+}
+
+
+/* ==========================
+   CUENTA
+========================== */
+
+#cuenta{
+
+    display:none;
+
+    margin-top:25px;
+}
+
+
+/* ==========================
+   FINAL
+========================== */
+
+.final h3{
+
+    font-family:'Great Vibes',cursive;
+
+    font-size:3rem;
+
+    margin-top:25px;
+}
+
+
+/* ==========================
+   MODAL
+========================== */
+
+#modalConfirmacion{
+
+    display:none;
+
+    position:fixed;
+
+    inset:0;
+
+    z-index:99999;
+
+    justify-content:center;
+
+    align-items:center;
+
+    padding:20px;
+
+    background:
+    rgba(0,0,0,.45);
+
+    backdrop-filter:blur(8px);
+}
+
+.modal-contenido{
+
+    width:100%;
+
+    max-width:420px;
+
+    background:
+    rgba(255,255,255,.95);
+
+    border-radius:30px;
+
+    padding:35px 25px;
+
+    text-align:center;
+
+    position:relative;
+}
+
+.modal-contenido h2{
+
+    margin-bottom:30px;
+}
+
+.modal-contenido input{
+
+    width:100%;
+
+    padding:15px;
+
+    margin-bottom:15px;
+
+    border:none;
+
+    border-radius:15px;
+
+    background:#f3f8ff;
+
+    font-size:1rem;
+}
+
+.cerrar{
+
+    position:absolute;
+
+    top:15px;
+
+    right:20px;
+
+    border:none;
+
+    background:none;
+
+    font-size:2rem;
+
+    color:#4f79b9;
+
+    cursor:pointer;
+}
+
+
+/* ==========================
+   PERSONAS
+========================== */
+
+.contador-personas{
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    gap:25px;
+
+    margin:25px 0;
+}
+
+.contador-personas button{
+
+    width:50px;
+
+    height:50px;
+
+    border:none;
+
+    border-radius:50%;
+
+    background:#4f79b9;
+
+    color:white;
+
+    font-size:1.6rem;
+
+    cursor:pointer;
+}
+
+#cantidadTexto{
+
+    font-size:2rem;
+
+    font-weight:bold;
+}
+
+#btnEnviar:disabled{
+
+    opacity:.5;
+
+    cursor:not-allowed;
+}
+
+
+/* ==========================
+   RESPONSIVE
+========================== */
+
+@media(min-width:768px){
+
+    .hero h1,
+    .inicio-contenido h1{
+
+        font-size:7rem;
+    }
+
+    .contador-grid{
+
+        grid-template-columns:
+        repeat(4,1fr);
+    }
+
+    section h2{
+
+        font-size:4rem;
+    }
+
+}
