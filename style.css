@@ -269,4 +269,20 @@ section { padding: 90px 20px; text-align: center; position: relative; z-index: 2
     .titulo-plateado { font-size: 7rem; }
     .titulo-seccion { font-size: 4.5rem; }
     .corona-img { width: 150px; }
+
+   /* BOTÓN DE LA PRIMERA PANTALLA REFORZADO */
+#abrirInvitacion {
+    background-color: var(--celeste-oscuro);
+    color: var(--blanco);
+    border: 2px solid var(--celeste-oscuro);
+    font-weight: 600;
+    box-shadow: 0 4px 15px rgba(94, 139, 179, 0.4);
 }
+
+#abrirInvitacion:hover {
+    background-color: var(--blanco);
+    color: var(--celeste-oscuro);
+    box-shadow: 0 6px 20px rgba(94, 139, 179, 0.6);
+}
+}
+
