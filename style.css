@@ -270,21 +270,24 @@ section { padding: 90px 20px; text-align: center; position: relative; z-index: 2
     .titulo-seccion { font-size: 4.5rem; }
     .corona-img { width: 150px; }
 
-/* BOTÓN DE LA PRIMERA PANTALLA REFORZADO (BLANCO) */
+/* ==========================================
+   BOTÓN PRINCIPAL BLANCO SÓLIDO (AL ALTA LEGIBILIDAD)
+   ========================================== */
 #abrirInvitacion {
-    background-color: var(--blanco);
-    color: var(--celeste-oscuro);
-    border: 2px solid var(--celeste-oscuro);
-    font-weight: 600;
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    background-color: var(--blanco) !important;
+    color: var(--celeste-oscuro) !important;
+    border: 2px solid var(--celeste-oscuro) !important;
+    font-weight: 600 !important;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.15) !important;
+    text-shadow: none !important; /* Quita sombras internas para que la letra sea nítida */
 }
 
+/* Efecto al pasar el cursor o tocar en el celular */
 #abrirInvitacion:hover {
-    background-color: var(--celeste-oscuro);
-    color: var(--blanco);
-    box-shadow: 0 6px 20px rgba(94, 139, 179, 0.4);
+    background-color: var(--celeste-oscuro) !important;
+    color: var(--blanco) !important;
+    box-shadow: 0 6px 20px rgba(94, 139, 179, 0.5) !important;
 }
-
    /* ==========================================
    OPTIMIZACIÓN EXCLUSIVA PARA CELULARES
    ========================================== */
