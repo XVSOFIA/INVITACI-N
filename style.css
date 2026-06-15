@@ -87,11 +87,11 @@ body {
 
 /* IMAGEN CORONA */
 .corona-img {
-    width: 120px; /* Ajusta el tamaño según necesites */
+    width: 120px;
     height: auto;
     margin: 0 auto 10px auto;
     display: block;
-    border-radius: 10px; /* Por si la imagen tiene fondo cuadrado */
+    border-radius: 10px;
     animation: flotar 3s ease-in-out infinite;
 }
 
@@ -262,16 +262,8 @@ section { padding: 90px 20px; text-align: center; position: relative; z-index: 2
 
 #btnEnviar:disabled { opacity: 0.4; cursor: not-allowed; }
 
-/* ==========================
-   RESPONSIVE
-========================== */
-@media(min-width: 768px) {
-    .titulo-plateado { font-size: 7rem; }
-    .titulo-seccion { font-size: 4.5rem; }
-    .corona-img { width: 150px; }
-
 /* ==========================================
-   BOTÓN "DESCUBRIR INVITACIÓN" ESTILO PLATEADO
+   ESTILOS GENERALES DEL BOTÓN PRINCIPAL
    ========================================== */
 #abrirInvitacion {
     background-color: var(--blanco) !important;
@@ -279,21 +271,29 @@ section { padding: 90px 20px; text-align: center; position: relative; z-index: 2
     border: 2px solid var(--plateado) !important;
     font-weight: 600 !important;
     box-shadow: 0 4px 15px rgba(0, 0, 0, 0.12) !important;
-    text-shadow: none !important; /* Asegura que la letra se vea completamente nítida */
+    text-shadow: none !important;
 }
 
-/* Efecto al pasar el cursor o pulsar en el celular */
 #abrirInvitacion:hover {
     background-color: var(--plateado) !important;
     color: var(--blanco) !important;
     border-color: var(--plateado) !important;
     box-shadow: 0 6px 20px rgba(168, 178, 185, 0.5) !important;
 }
-   /* ==========================================
+
+/* ==========================
+   RESPONSIVE ESCRITORIO
+========================== */
+@media(min-width: 768px) {
+    .titulo-plateado { font-size: 7rem; }
+    .titulo-seccion { font-size: 4.5rem; }
+    .corona-img { width: 150px; }
+} /* <-- AQUÍ ESTÁ LA LLAVE QUE FALTABA CERRAR */
+
+/* ==========================================
    OPTIMIZACIÓN ULTRA-PRECISA PARA CELULARES
    ========================================== */
 @media (max-width: 767px) {
-    /* Forzar que la pantalla inicial ocupe el alto exacto del celular sin desbordarse */
     #pantallaInicio {
         padding: 10px !important;
         height: 100svh !important; 
@@ -307,28 +307,26 @@ section { padding: 90px 20px; text-align: center; position: relative; z-index: 2
         margin: auto !important;
     }
 
-    /* Achicar la corona para que no sature la parte superior */
     .corona-img {
         width: 75px !important;
         margin-bottom: 5px !important;
     }
 
-    /* Reducir el texto a un tamaño fino y elegante que quepa bien en el ancho del celular */
+    /* Tamaño compacto para que el nombre quepa fluido en teléfonos */
     .titulo-plateado {
-        font-size: 2.2rem !important; 
+        font-size: 2.3rem !important; 
         line-height: 1.2 !important;
         margin-top: 5px !important;
         margin-bottom: 10px !important;
     }
 
-    /* Achicar la fecha */
     .fecha-inicio {
         margin: 15px 0 !important;
         font-size: 0.8rem !important;
         letter-spacing: 2px !important;
     }
 
-    /* FORZAR EL BOTÓN BLANCO ESTILO UBICACIÓN CON BORDE PLATEADO */
+    /* Adaptación del botón para móviles */
     #abrirInvitacion {
         background-color: var(--blanco) !important;
         color: var(--texto-oscuro) !important;
@@ -339,12 +337,8 @@ section { padding: 90px 20px; text-align: center; position: relative; z-index: 2
         margin-top: 10px !important;
         display: inline-block !important;
         box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15) !important;
-        text-shadow: none !important;
     }
 
-    /* ==========================================
-       AJUSTES PARA EL RESTO DE LA PÁGINA EN MÓVIL
-       ========================================== */
     .titulo-seccion {
         font-size: 2.4rem !important;
         margin-bottom: 15px !important;
@@ -375,5 +369,3 @@ section { padding: 90px 20px; text-align: center; position: relative; z-index: 2
         padding: 30px 15px !important;
     }
 }
-}
-
