@@ -1,484 +1,187 @@
 <!DOCTYPE html>
 <html lang="es">
-
 <head>
-
     <meta charset="UTF-8">
-
-    <meta name="viewport"
-        content="width=device-width, initial-scale=1.0">
-
-    <title>
-        XV Años | Sofía Belén Chim Blanco
-    </title>
-
-    <link rel="preconnect"
-        href="https://fonts.googleapis.com">
-
-    <link rel="preconnect"
-        href="https://fonts.gstatic.com"
-        crossorigin>
-
-    <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Montserrat:wght@300;400;500;600&display=swap"
-        rel="stylesheet">
-
-    <link rel="stylesheet"
-        href="style.css">
-
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>XV Años | Sofía Belén</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Montserrat:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
 </head>
-
 <body>
 
+    <!-- DESTELLOS ANIMADOS DE FONDO -->
+    <div class="destellos-fondo"></div>
+
     <!-- MUSICA -->
-
     <audio id="musica" loop>
-
-        <source src="piano.mp3"
-            type="audio/mpeg">
-
+        <source src="piano.mp3" type="audio/mpeg">
     </audio>
 
     <!-- PANTALLA INICIAL -->
-
     <div id="pantallaInicio">
-
         <div class="inicio-contenido">
-
-            <div class="corona">
-                👑
-            </div>
-
-            <h3>
-                MIS XV AÑOS
-            </h3>
-
-            <h1>
-                Sofía Belén
-                <br>
-                Chim Blanco
-            </h1>
-
-            <p>
-                21 de Junio de 2026
-            </p>
-
-            <button id="abrirInvitacion">
-
-                Abrir Invitación
-
-            </button>
-
+            <!-- AQUÍ VA TU IMAGEN DE LA CORONA -->
+            <img src="Corona.jpg" alt="Corona" class="corona-img">
+            
+            <h1 class="titulo-plateado">Sofía Belén<br>Chim Blanco</h1>
+            <p class="fecha-inicio">21 de Junio de 2026</p>
+            <button id="abrirInvitacion" class="boton-elegante">Descubrir Invitación</button>
         </div>
-
     </div>
 
     <!-- CONTENIDO -->
-
     <main id="contenido">
 
         <!-- HERO -->
-
         <section class="hero">
-
             <div class="overlay"></div>
-
             <div class="hero-contenido">
-
-                <h2>
-                    Mis XV Años
-                </h2>
-
-                <h1>
-                    Sofía Belén
-                    <br>
-                    Chim Blanco
-                </h1>
-
+                <!-- AQUÍ TAMBIÉN APARECE LA CORONA -->
+                <img src="Corona.jpg" alt="Corona" class="corona-img-pequena">
+                <h1 class="titulo-plateado">Sofía Belén<br>Chim Blanco</h1>
             </div>
-
         </section>
 
         <!-- PADRE -->
-
-        <section class="padre diagonal">
-
+        <section class="padre seccion-clara">
             <div class="contenedor">
-
-                <h2>
-                    Con la bendición de su padre
-                </h2>
-
-                <p class="nombre-padre">
-
-                    Saqueo Chim
-
-                </p>
-
+                <h2 class="titulo-seccion">Con la bendición de su padre y madre </h2>
+                <p class="nombre-destacado celeste">Saqueo Chim</p>
+                <p class="nombre-destacado celeste">Ivonne Blanco</p>
             </div>
-
         </section>
 
         <!-- MENSAJE -->
-
-        <section class="mensaje diagonal-inversa">
-
-            <div class="contenedor">
-
-                <h2>
-                    Acompáñame
-                </h2>
-
-                <p>
-
-                    Acompáñame a Mis XV Años.
-                    Me encantaría que fueras parte
-                    de este momento tan especial.
-
+        <section class="mensaje seccion-celeste">
+            <div class="contenedor borde-plateado">
+                <h2 class="titulo-seccion blanco">Acompáñame</h2>
+                <p class="texto-formal blanco">
+                    Me encantaría que fueras parte de este momento tan especial.<br>
+                    Tu presencia hará de esta noche un recuerdo inolvidable.
                 </p>
-
             </div>
-
         </section>
 
         <!-- CONTADOR -->
-
-        <section class="contador diagonal">
-
+        <section class="contador seccion-clara">
             <div class="contenedor">
-
-                <h2>
-                    Cuenta Regresiva
-                </h2>
-
+                <h2 class="titulo-seccion">Faltan</h2>
                 <div class="contador-grid">
-
-                    <div>
-
+                    <div class="contador-item">
                         <span id="dias">0</span>
-
                         <small>Días</small>
-
                     </div>
-
-                    <div>
-
+                    <div class="contador-item">
                         <span id="horas">0</span>
-
                         <small>Horas</small>
-
                     </div>
-
-                    <div>
-
+                    <div class="contador-item">
                         <span id="minutos">0</span>
-
                         <small>Minutos</small>
-
                     </div>
-
-                    <div>
-
+                    <div class="contador-item">
                         <span id="segundos">0</span>
-
                         <small>Segundos</small>
-
                     </div>
-
                 </div>
-
             </div>
+        </section>
 
+        <!-- ITINERARIO -->
+        <section class="itinerario seccion-celeste">
+            <div class="contenedor">
+                <h2 class="titulo-seccion blanco">Programa</h2>
+                <div class="linea-tiempo">
+                    <div class="evento-tiempo">
+                        <h3 class="rosado-texto">12:30 Hrs</h3>
+                        <p class="blanco">Recepción de Invitados</p>
+                    </div>
+                    
+                    <div class="evento-tiempo">
+                        <h3 class="rosado-texto">13:00 Hrs</h3>
+                        <p class="blanco">Entrada de la Quinceañera</p>
+                    </div>
+                   
+                </div>
+            </div>
         </section>
 
         <!-- DETALLES -->
+        <section class="evento seccion-clara">
+            <div class="contenedor borde-plateado">
+                <h2 class="titulo-seccion celeste">Recepción</h2>
+                <div class="detalles-lista">
+                    <p><span class="etiqueta plateado">Fecha:</span> 21 de Junio de 2026</p>
+                    <p><span class="etiqueta plateado">Lugar:</span> Jardín y salón para eventos Vista Real San Bartolo M. A</p>
 
-        <section class="evento diagonal-inversa">
-
-            <div class="contenedor">
-
-                <h2>
-
-                    Detalles del Evento
-
-                </h2>
-
-                <p>
-
-                    📅 21 de Junio de 2026
-
-                </p>
-
-                <p>
-
-                    🕐 13:00 Horas
-
-                </p>
-
-                <p>
-
-                    📍 La Casa Blanca
-
-                </p>
-
-                <p>
-
-                    5ta Calle Prolongación 5-42,
-                    La Zarcita Zona 3,
-                    San Bartolomé Milpas Altas,
-                    Sacatepéquez.
-
-                </p>
-
+                </div>
+                <a class="boton-elegante btn-plateado" href="https://maps.app.goo.gl/hSjVmLKF1XU8VXwi6" target="_blank">Ver Ubicación</a>
             </div>
-
-        </section>
-
-        <!-- UBICACION -->
-
-        <section class="ubicacion diagonal">
-
-            <div class="contenedor">
-
-                <h2>
-
-                    Ubicación
-
-                </h2>
-
-                <p>
-
-                    Será un honor compartir
-                    este momento contigo.
-
-                </p>
-
-                <a class="boton"
-
-                    href="https://maps.app.goo.gl/3zKLei4RLvD97hop6"
-
-                    target="_blank">
-
-                    Ver Cómo Llegar
-
-                </a>
-
-            </div>
-
         </section>
 
         <!-- VESTIMENTA -->
-
-        <section class="vestimenta diagonal-inversa">
-
+        <section class="vestimenta seccion-celeste">
             <div class="contenedor">
-
-                <h2>
-
-                    Código de Vestimenta
-
-                </h2>
-
-                <p>
-
-                    Formal
-
+                <h2 class="titulo-seccion blanco">Código de Vestimenta</h2>
+                <p class="etiqueta-grande rosado-texto">Formal</p>
+                <div class="divisor-linea plateado-bg"></div>
+                <p class="texto-formal blanco">
+                    Agradecemos su apoyo reservando el color celeste y los tonos de azul para la quinceañera.
                 </p>
-
-                <p>
-
-                    Agradecemos evitar prendas
-                    en color celeste.
-
-                </p>
-
             </div>
-
         </section>
 
         <!-- REGALOS -->
-
-        <section class="regalos diagonal">
-
+        <section class="regalos seccion-clara">
             <div class="contenedor">
-
-                <h2>
-
-                    Regalos
-
-                </h2>
-
-                <p>
-
-                    Tu presencia será el regalo
-                    más valioso.
-
+                <h2 class="titulo-seccion celeste">Mesa de Regalos</h2>
+                <div class="divisor-linea rosado-bg"></div>
+                <p class="texto-formal">
+                    Tu compañía es lo más valioso para nosotros. Si deseas consentir a la quinceañera con un obsequio físico, contaremos con un espacio especial el día del evento para recibir tus hermosos detalles.
                 </p>
-
-
-                <div id="cuenta">
-
-                    <p>
-
-                        Número de cuenta:
-                        PENDIENTE
-
-                    </p>
-
-                    <p>
-
-                        También puedes entregarlo
-                        en sobre el día del evento.
-
-                    </p>
-
-                </div>
-
             </div>
-
         </section>
 
         <!-- CONFIRMACION -->
-
-        <section class="confirmacion diagonal-inversa">
-
-            <div class="contenedor">
-
-                <h2>
-
-                    Confirmar Asistencia
-
-                </h2>
-
-                <p>
-
-                    Tu presencia es muy importante
-                    para nosotros.
-
-                </p>
-
-                <button class="boton"
-
-                    onclick="abrirModal()">
-
-                    Confirmar Asistencia
-
-                </button>
-
+        <section class="confirmacion seccion-celeste">
+            <div class="contenedor borde-plateado">
+                <h2 class="titulo-seccion blanco">Asistencia</h2>
+                <p class="texto-formal blanco">Por favor, confirma tu asistencia antes del evento para organizar tu lugar.</p>
+                <button class="boton-elegante btn-blanco" onclick="abrirModal()">Confirmar Asistencia</button>
             </div>
-
         </section>
 
         <!-- FINAL -->
-
-        <section class="final">
-
+        <section class="final seccion-clara">
             <div class="contenedor">
-
-                <h2>
-
-                    Gracias
-
-                </h2>
-
-                <p>
-
-                    Será un honor compartir
-                    contigo este día tan especial.
-
-                </p>
-
-                <h3>
-
-                    Sofía Belén Chim Blanco
-
-                </h3>
-
+                <p class="texto-formal celeste">Será un honor compartir este día de ensueño contigo.</p>
+                <h3 class="firma plateado-brillo">Sofía Belén</h3>
             </div>
-
         </section>
 
     </main>
 
     <!-- MODAL -->
-
-    <div id="modalConfirmacion">
-
+    <div id="modalConfirmacion" class="modal-overlay">
         <div class="modal-contenido">
-
-            <button class="cerrar"
-
-                onclick="cerrarModal()">
-
-                ×
-
-            </button>
-
-            <h2>
-
-                Confirmar Asistencia
-
-            </h2>
-
-            <input type="text"
-
-                id="nombre"
-
-                placeholder="Nombre">
-
-            <input type="text"
-
-                id="apellido"
-
-                placeholder="Apellido">
-
-            <p>
-
-                Cantidad de asistentes
-
-            </p>
-
-            <div class="contador-personas">
-
-                <button type="button"
-
-                    onclick="cambiarCantidad(-1)">
-
-                    −
-
-                </button>
-
-                <span id="cantidadTexto">
-
-                    1
-
-                </span>
-
-                <button type="button"
-
-                    onclick="cambiarCantidad(1)">
-
-                    +
-
-                </button>
-
+            <button class="cerrar" onclick="cerrarModal()">×</button>
+            <h2 class="titulo-seccion celeste">Confirmación</h2>
+            <div class="formulario">
+                <input type="text" id="nombre" placeholder="Nombre">
+                <input type="text" id="apellido" placeholder="Apellido">
+                <p class="texto-formal espaciado-top celeste">Pases solicitados</p>
+                <div class="contador-personas">
+                    <button type="button" class="btn-circular" onclick="cambiarCantidad(-1)">−</button>
+                    <span id="cantidadTexto" class="numero-personas">1</span>
+                    <button type="button" class="btn-circular" onclick="cambiarCantidad(1)">+</button>
+                </div>
+                <button id="btnEnviar" class="boton-elegante btn-plateado" disabled>Enviar por WhatsApp</button>
             </div>
-
-            <button id="btnEnviar"
-
-                class="boton"
-
-                disabled>
-
-                Enviar Confirmación
-
-            </button>
-
         </div>
-
     </div>
 
     <script src="script.js"></script>
-
 </body>
-
 </html>
