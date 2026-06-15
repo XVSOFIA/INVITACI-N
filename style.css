@@ -1,558 +1,272 @@
 /* ==========================
-   RESET
+   RESET & VARIABLES (Paleta Celeste, Plateado y Rosado)
 ========================== */
-
-*{
-    margin:0;
-    padding:0;
-    box-sizing:border-box;
+:root {
+    --celeste-principal: #a6c8e6;
+    --celeste-oscuro: #5e8bb3;
+    --celeste-claro: #e3f0fa;
+    --plateado: #a8b2b9;
+    --plateado-brillo: #e4e7ea;
+    --rosado-pastel: #fce4ec;
+    --rosado-intenso: #e8a0b7;
+    --blanco: #ffffff;
+    --texto-oscuro: #3c4c5e;
 }
 
-html{
-    scroll-behavior:smooth;
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
 }
 
-body{
-
-    font-family:'Montserrat',sans-serif;
-
-    background:#f8fbff;
-
-    color:#355887;
-
-    overflow-x:hidden;
+html {
+    scroll-behavior: smooth;
 }
 
+body {
+    font-family: 'Montserrat', sans-serif;
+    background: var(--blanco);
+    color: var(--texto-oscuro);
+    overflow-x: hidden;
+    position: relative;
+}
+
+/* DESTELLOS DE FONDO - Magia CSS */
+.destellos-fondo {
+    position: fixed;
+    top: 0; left: 0; width: 100%; height: 100%;
+    pointer-events: none;
+    z-index: 0;
+    background-image: 
+        radial-gradient(var(--celeste-claro) 1px, transparent 1px),
+        radial-gradient(var(--rosado-pastel) 1px, transparent 1px);
+    background-size: 50px 50px, 70px 70px;
+    background-position: 0 0, 25px 25px;
+    opacity: 0.6;
+    animation: moverDestellos 20s linear infinite;
+}
+
+@keyframes moverDestellos {
+    0% { transform: translateY(0); }
+    100% { transform: translateY(-100px); }
+}
 
 /* ==========================
-   PANTALLA INICIAL
+   TIPOGRAFÍA Y DECORACIÓN
 ========================== */
-
-#pantallaInicio{
-
-    position:fixed;
-
-    inset:0;
-
-    z-index:9999;
-
-    display:flex;
-
-    justify-content:center;
-
-    align-items:center;
-
-    text-align:center;
-
-    background:
-    linear-gradient(
-        rgba(255,255,255,.45),
-        rgba(255,255,255,.45)
-    ),
-    url("hero.jpg");
-
-    background-size:cover;
-
-    background-position:center;
-
-    transition:1.2s ease;
+.titulo-plateado {
+    font-family: 'Great Vibes', cursive;
+    font-size: 5.5rem;
+    line-height: 1.1;
+    color: var(--celeste-claro);
+    /* Delineado y Brillo Plateado Mágico */
+    text-shadow: 
+        -1px -1px 0 var(--plateado),
+         1px -1px 0 var(--plateado),
+        -1px  1px 0 var(--plateado),
+         1px  1px 0 var(--plateado),
+         0px 0px 15px rgba(168, 178, 185, 0.8),
+         0px 0px 30px rgba(255, 255, 255, 0.9);
+    margin-top: 15px;
 }
 
-#pantallaInicio.ocultar{
-
-    opacity:0;
-
-    visibility:hidden;
+.titulo-seccion {
+    font-family: 'Great Vibes', cursive;
+    font-size: 4rem;
+    margin-bottom: 20px;
+    font-weight: 400;
+    text-shadow: 1px 1px 3px rgba(0,0,0,0.05);
 }
 
-.inicio-contenido{
+.celeste { color: var(--celeste-oscuro); }
+.blanco { color: var(--blanco); }
+.rosado-texto { color: var(--rosado-intenso); }
+.plateado-brillo { color: var(--plateado); }
 
-    padding:30px;
+.texto-formal { line-height: 1.8; font-weight: 300; font-size: 1.05rem; }
 
-    backdrop-filter:blur(6px);
+/* IMAGEN CORONA */
+.corona-img {
+    width: 120px; /* Ajusta el tamaño según necesites */
+    height: auto;
+    margin: 0 auto 10px auto;
+    display: block;
+    border-radius: 10px; /* Por si la imagen tiene fondo cuadrado */
+    animation: flotar 3s ease-in-out infinite;
 }
 
-.corona{
-
-    font-size:3rem;
-
-    margin-bottom:20px;
+.corona-img-pequena {
+    width: 80px;
+    margin: 0 auto 10px auto;
+    display: block;
 }
 
-.inicio-contenido h3{
-
-    letter-spacing:5px;
-
-    font-weight:300;
-
-    color:#4f79b9;
-
-    margin-bottom:15px;
+@keyframes flotar {
+    0% { transform: translateY(0px); }
+    50% { transform: translateY(-10px); }
+    100% { transform: translateY(0px); }
 }
-
-.inicio-contenido h1{
-
-    font-family:'Great Vibes',cursive;
-
-    font-size:4.5rem;
-
-    color:#355887;
-
-    line-height:1;
-
-    margin-bottom:20px;
-}
-
-.inicio-contenido p{
-
-    letter-spacing:2px;
-
-    margin-bottom:35px;
-}
-
-#abrirInvitacion{
-
-    border:none;
-
-    padding:18px 40px;
-
-    border-radius:50px;
-
-    background:
-    linear-gradient(
-        135deg,
-        #8bb4e8,
-        #4f79b9
-    );
-
-    color:white;
-
-    cursor:pointer;
-
-    font-size:1rem;
-
-    box-shadow:
-    0 10px 30px rgba(79,121,185,.25);
-}
-
 
 /* ==========================
-   CONTENIDO
+   PANTALLA INICIAL & HERO
 ========================== */
-
-#contenido{
-
-    display:block;
+#pantallaInicio, .hero {
+    position: fixed;
+    inset: 0;
+    z-index: 9999;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    background: linear-gradient(rgba(255,255,255,0.3), rgba(255,255,255,0.3)), url("hero.jpg");
+    background-size: cover;
+    background-position: center;
+    transition: opacity 1.2s ease, visibility 1.2s ease;
 }
 
+#pantallaInicio.ocultar { opacity: 0; visibility: hidden; }
+
+.hero { position: relative; min-height: 100svh; z-index: 1; }
+
+.inicio-contenido, .hero-contenido {
+    padding: 40px;
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(5px);
+    border-radius: 20px;
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    box-shadow: 0 0 30px rgba(166, 200, 230, 0.4);
+}
+
+.fecha-inicio {
+    letter-spacing: 4px;
+    margin: 30px 0;
+    font-weight: 400;
+    text-transform: uppercase;
+    font-size: 0.95rem;
+    color: var(--texto-oscuro);
+}
 
 /* ==========================
-   HERO
+   ESTRUCTURA DE SECCIONES
 ========================== */
+section { padding: 90px 20px; text-align: center; position: relative; z-index: 2; }
 
-.hero{
+.contenedor { width: 90%; max-width: 650px; margin: auto; }
 
-    min-height:100svh;
+.seccion-clara { background-color: rgba(255,255,255,0.9); }
+.seccion-celeste { background-color: var(--celeste-principal); box-shadow: inset 0 0 50px rgba(0,0,0,0.05); }
 
-    display:flex;
-
-    justify-content:center;
-
-    align-items:center;
-
-    text-align:center;
-
-    background:
-    linear-gradient(
-        rgba(255,255,255,.35),
-        rgba(255,255,255,.35)
-    ),
-    url("hero.jpg");
-
-    background-size:cover;
-
-    background-position:center;
+.borde-plateado {
+    border: 2px solid var(--plateado-brillo);
+    padding: 40px 20px;
+    border-radius: 15px;
+    position: relative;
 }
 
-.hero-contenido{
-
-    padding:30px;
+.borde-plateado::before {
+    content: ''; position: absolute; top: 5px; left: 5px; right: 5px; bottom: 5px;
+    border: 1px solid rgba(168, 178, 185, 0.5);
+    border-radius: 10px; pointer-events: none;
 }
-
-.hero h2{
-
-    letter-spacing:5px;
-
-    font-weight:300;
-
-    margin-bottom:20px;
-}
-
-.hero h1{
-
-    font-family:'Great Vibes',cursive;
-
-    font-size:4.5rem;
-
-    color:#355887;
-
-    line-height:1;
-}
-
 
 /* ==========================
-   SECCIONES
+   ITINERARIO (Línea de tiempo)
 ========================== */
-
-section{
-
-    position:relative;
-
-    padding:90px 20px;
-
-    text-align:center;
+.linea-tiempo {
+    margin-top: 40px;
+    border-left: 2px solid var(--plateado-brillo);
+    padding-left: 30px;
+    text-align: left;
+    max-width: 300px;
+    margin-left: auto;
+    margin-right: auto;
 }
 
-.contenedor{
+.evento-tiempo { margin-bottom: 30px; position: relative; }
 
-    width:90%;
-
-    max-width:800px;
-
-    margin:auto;
+.evento-tiempo::before {
+    content: ''; position: absolute;
+    left: -37px; top: 5px;
+    width: 12px; height: 12px;
+    background-color: var(--rosado-intenso);
+    border-radius: 50%;
+    box-shadow: 0 0 10px var(--rosado-pastel);
 }
 
-section h2{
-
-    font-family:'Great Vibes',cursive;
-
-    font-size:3rem;
-
-    margin-bottom:25px;
-
-    color:#4f79b9;
-}
-
-section p{
-
-    line-height:1.8;
-
-    margin-bottom:15px;
-}
-
+.evento-tiempo h3 { font-size: 1.2rem; margin-bottom: 5px; letter-spacing: 1px; }
+.evento-tiempo p { font-weight: 300; }
 
 /* ==========================
-   DIAGONALES
+   DETALLES Y ELEMENTOS
 ========================== */
+.nombre-destacado { font-size: 1.5rem; letter-spacing: 2px; text-transform: uppercase; margin-top: 15px; }
 
-.diagonal{
+.detalles-lista p { margin-bottom: 15px; font-weight: 400; font-size: 1.1rem; }
 
-    clip-path:
-    polygon(
-        0 0,
-        100% 5%,
-        100% 100%,
-        0 95%
-    );
-}
+.etiqueta { text-transform: uppercase; letter-spacing: 2px; font-size: 0.8rem; margin-right: 10px; font-weight: 600;}
+.etiqueta.plateado { color: var(--plateado); }
 
-.diagonal-inversa{
+.etiqueta-grande { font-size: 1.5rem; text-transform: uppercase; letter-spacing: 4px; margin: 20px 0; }
 
-    clip-path:
-    polygon(
-        0 5%,
-        100% 0,
-        100% 95%,
-        0 100%
-    );
-}
-
-
-/* ==========================
-   COLORES
-========================== */
-
-.padre,
-.contador,
-.ubicacion,
-.regalos{
-
-    background:#eef6ff;
-}
-
-.mensaje,
-.evento,
-.vestimenta,
-.confirmacion{
-
-    background:white;
-}
-
-.final{
-
-    background:
-    linear-gradient(
-        180deg,
-        #eef6ff,
-        #dcecff
-    );
-}
-
+.divisor-linea { width: 80px; height: 2px; margin: 30px auto; }
+.plateado-bg { background-color: var(--plateado-brillo); }
+.rosado-bg { background-color: var(--rosado-intenso); }
 
 /* ==========================
    CONTADOR
 ========================== */
-
-.contador-grid{
-
-    display:grid;
-
-    grid-template-columns:
-    repeat(2,1fr);
-
-    gap:25px;
-
-    margin-top:35px;
-}
-
-.contador-grid div{
-
-    padding:20px;
-}
-
-.contador-grid span{
-
-    display:block;
-
-    font-size:3rem;
-
-    font-weight:bold;
-
-    color:#4f79b9;
-}
-
+.contador-grid { display: flex; justify-content: center; gap: 20px; margin-top: 30px; }
+.contador-item { display: flex; flex-direction: column; align-items: center; background: var(--celeste-claro); padding: 15px; border-radius: 10px; border: 1px solid var(--plateado-brillo); min-width: 80px;}
+.contador-item span { font-family: 'Great Vibes', cursive; font-size: 3rem; color: var(--celeste-oscuro); line-height: 1; }
+.contador-item small { text-transform: uppercase; letter-spacing: 2px; font-size: 0.7rem; margin-top: 5px; color: var(--texto-oscuro); }
 
 /* ==========================
    BOTONES
 ========================== */
-
-.boton,
-.regalos button{
-
-    display:inline-block;
-
-    margin-top:20px;
-
-    border:none;
-
-    padding:16px 32px;
-
-    border-radius:50px;
-
-    text-decoration:none;
-
-    background:
-    linear-gradient(
-        135deg,
-        #8bb4e8,
-        #4f79b9
-    );
-
-    color:white;
-
-    cursor:pointer;
-
-    font-size:1rem;
-
-    box-shadow:
-    0 10px 30px rgba(79,121,185,.20);
+.boton-elegante {
+    display: inline-block; margin-top: 30px; padding: 15px 40px;
+    background: transparent;
+    border: 1px solid var(--celeste-oscuro);
+    color: var(--celeste-oscuro);
+    text-transform: uppercase; letter-spacing: 3px; font-size: 0.85rem; font-weight: 600;
+    cursor: pointer; transition: all 0.4s ease; text-decoration: none; border-radius: 30px;
 }
 
+.boton-elegante:hover { background: var(--celeste-oscuro); color: var(--blanco); box-shadow: 0 5px 15px rgba(94, 139, 179, 0.4); }
 
-/* ==========================
-   CUENTA
-========================== */
+.btn-plateado { border-color: var(--plateado); color: var(--texto-oscuro); }
+.btn-plateado:hover { background: var(--plateado); color: var(--blanco); }
 
-#cuenta{
-
-    display:none;
-
-    margin-top:25px;
-}
-
-
-/* ==========================
-   FINAL
-========================== */
-
-.final h3{
-
-    font-family:'Great Vibes',cursive;
-
-    font-size:3rem;
-
-    margin-top:25px;
-}
-
+.btn-blanco { border-color: var(--blanco); color: var(--blanco); }
+.btn-blanco:hover { background: var(--blanco); color: var(--celeste-oscuro); }
 
 /* ==========================
    MODAL
 ========================== */
+.modal-overlay { display: none; position: fixed; inset: 0; z-index: 99999; justify-content: center; align-items: center; padding: 20px; background: rgba(0, 0, 0, 0.6); backdrop-filter: blur(5px); }
 
-#modalConfirmacion{
+.modal-contenido { width: 100%; max-width: 450px; background: var(--blanco); padding: 50px 40px; text-align: center; position: relative; border: 2px solid var(--plateado-brillo); border-radius: 20px; box-shadow: 0 10px 40px rgba(0,0,0,0.2); }
 
-    display:none;
+.formulario input { width: 100%; padding: 15px; margin-bottom: 20px; background: var(--celeste-claro); border: 1px solid transparent; border-radius: 10px; color: var(--texto-oscuro); font-family: 'Montserrat', sans-serif; font-size: 1rem; text-align: center; transition: 0.3s; }
+.formulario input:focus { outline: none; border-color: var(--celeste-oscuro); }
 
-    position:fixed;
+.espaciado-top { margin-top: 20px; }
 
-    inset:0;
+.cerrar { position: absolute; top: 15px; right: 20px; border: none; background: none; font-size: 2.5rem; color: var(--plateado); cursor: pointer; }
 
-    z-index:99999;
+/* CONTADOR PERSONAS MODAL */
+.contador-personas { display: flex; justify-content: center; align-items: center; gap: 30px; margin: 15px 0 30px 0; }
+.btn-circular { width: 45px; height: 45px; border: 1px solid var(--celeste-oscuro); border-radius: 50%; background: transparent; color: var(--celeste-oscuro); font-size: 1.5rem; cursor: pointer; display: flex; justify-content: center; align-items: center; transition: all 0.3s; }
+.btn-circular:hover { background: var(--celeste-oscuro); color: var(--blanco); }
+.numero-personas { font-size: 2rem; color: var(--texto-oscuro); font-weight: 500; }
 
-    justify-content:center;
-
-    align-items:center;
-
-    padding:20px;
-
-    background:
-    rgba(0,0,0,.45);
-
-    backdrop-filter:blur(8px);
-}
-
-.modal-contenido{
-
-    width:100%;
-
-    max-width:420px;
-
-    background:
-    rgba(255,255,255,.95);
-
-    border-radius:30px;
-
-    padding:35px 25px;
-
-    text-align:center;
-
-    position:relative;
-}
-
-.modal-contenido h2{
-
-    margin-bottom:30px;
-}
-
-.modal-contenido input{
-
-    width:100%;
-
-    padding:15px;
-
-    margin-bottom:15px;
-
-    border:none;
-
-    border-radius:15px;
-
-    background:#f3f8ff;
-
-    font-size:1rem;
-}
-
-.cerrar{
-
-    position:absolute;
-
-    top:15px;
-
-    right:20px;
-
-    border:none;
-
-    background:none;
-
-    font-size:2rem;
-
-    color:#4f79b9;
-
-    cursor:pointer;
-}
-
-
-/* ==========================
-   PERSONAS
-========================== */
-
-.contador-personas{
-
-    display:flex;
-
-    justify-content:center;
-
-    align-items:center;
-
-    gap:25px;
-
-    margin:25px 0;
-}
-
-.contador-personas button{
-
-    width:50px;
-
-    height:50px;
-
-    border:none;
-
-    border-radius:50%;
-
-    background:#4f79b9;
-
-    color:white;
-
-    font-size:1.6rem;
-
-    cursor:pointer;
-}
-
-#cantidadTexto{
-
-    font-size:2rem;
-
-    font-weight:bold;
-}
-
-#btnEnviar:disabled{
-
-    opacity:.5;
-
-    cursor:not-allowed;
-}
-
+#btnEnviar:disabled { opacity: 0.4; cursor: not-allowed; }
 
 /* ==========================
    RESPONSIVE
 ========================== */
-
-@media(min-width:768px){
-
-    .hero h1,
-    .inicio-contenido h1{
-
-        font-size:7rem;
-    }
-
-    .contador-grid{
-
-        grid-template-columns:
-        repeat(4,1fr);
-    }
-
-    section h2{
-
-        font-size:4rem;
-    }
-
+@media(min-width: 768px) {
+    .titulo-plateado { font-size: 7rem; }
+    .titulo-seccion { font-size: 4.5rem; }
+    .corona-img { width: 150px; }
 }
